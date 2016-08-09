@@ -34,14 +34,14 @@ import java.util.List;
 import java.util.Map;
 
 // TODO: cleanup
-final class DiffProcessor
+class DiffProcessor
 {
     private static final Equivalence<JsonNode> EQUIVALENCE
         = JsonNumEquals.getInstance();
 
     private final Map<JsonPointer, JsonNode> unchanged;
 
-    private final List<DiffOperation> diffs = Lists.newArrayList();
+    protected final List<DiffOperation> diffs = Lists.newArrayList();
 
     DiffProcessor(final Map<JsonPointer, JsonNode> unchanged)
     {
